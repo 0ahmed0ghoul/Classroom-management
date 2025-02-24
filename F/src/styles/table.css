@@ -1,0 +1,300 @@
+body{
+  width: 1660px;
+  height: 100%;
+}
+.table-container {
+  flex: 1; /* Each table takes up equal space */
+  margin: 20px 0;
+}
+.table-wrapper {
+  display: flex;
+  justify-content: space-between; /* Distributes space between tables */
+  gap: 20px; /* Adds space between tables */
+  width: 100%;
+}
+
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+  font-family: "Arial, sans-serif";
+  text-align: left;
+}
+
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: white;
+  text-align: left;
+  height: fit-content;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #ddd;
+  text-align: center; 
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+.delete-btn,
+.edit-btn {
+  font-size: 17px;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Delete Button Specific Styles */
+.delete-btn {
+  background-color: #ff4d4f;
+  color: white;
+  margin: 5px;
+}
+
+.delete-btn:hover {
+  background-color: #ff7875;
+  transform: scale(1.05);
+}
+
+/* Edit Button Specific Styles */
+.edit-btn {
+  height: fit-content9;
+  background-color: #1890ff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #40a9ff;
+  transform: scale(1.05);
+}
+
+.button-container {
+  text-align: center;
+}
+
+.add-btn {
+  margin-bottom: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.add-btn:active {
+  background-color: #009879;
+  transform: scale(1);
+}
+
+.add-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 180, 97, 0.5);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 80%; 
+  max-width: 900px;
+  height: 500px;
+  background-color: white;
+  padding: 20px;
+  overflow-y: auto; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.modal-content hr {
+  margin: 10px 0;
+  border-color: #ddd;
+}
+
+.styled {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  font-family: "Arial, sans-serif";
+  text-align: left;
+  margin-bottom: 20px;
+  max-height: 300px; 
+  overflow-y: auto;
+  display: block;
+}
+
+.styled th,
+.styled td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.styled tbody {
+  display: block;
+  width: 100%; 
+  max-height: 250px; 
+  overflow-y: auto; 
+}
+
+
+.styled tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+.styled tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Checkbox styling */
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* Add button styling */
+.add-bt {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-bt:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Cancel button styling */
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.selection-container{
+  width: 100%;
+}
+.calendar-container {
+  width: 95%;
+}
+
+.calendar-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.calendar-day {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.day-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+
+.session-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.module-item {
+  background-color: orange;
+  padding: 0.5rem ;
+  border-bottom: 1px solid #eee;
+  height: 32px;
+  margin: 3px;
+}
+
+.module-item:last-child {
+  border-bottom: none;
+}
+
+.module-label {
+  display: block;
+  font-weight: 600;
+}
+
+.module-time {
+  font-size: 0.875rem;
+  color: #666;
+}

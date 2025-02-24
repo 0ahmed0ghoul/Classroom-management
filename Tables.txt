@@ -1,0 +1,74 @@
+SQL> conn username
+Enter password:
+Connected.
+SQL> select table_name from user_tables;
+
+TABLE_NAME
+------------------------------
+CLASSROOM
+STUDENT
+TEACHER
+MODULE
+TYPEMODULE
+ATTEND
+
+6 rows selected.
+
+SQL> desc classroom
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CODE_C                                    NOT NULL VARCHAR2(5)
+ TYPE                                               VARCHAR2(5)
+ CAPACITY                                           NUMBER(38)
+
+SQL> desc student
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CODE_S                                    NOT NULL NUMBER(38)
+ FNAME                                              VARCHAR2(50)
+ LNAME                                              VARCHAR2(50)
+ LEVELE                                             VARCHAR2(20)
+ SPECIALITY                                         VARCHAR2(20)
+
+SQL> desc teacher
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ IDT                                       NOT NULL NUMBER(38)
+ NAME                                               VARCHAR2(50)
+ TEACHER_G                                          VARCHAR2(50)
+ Tmodule				            VARCHAR2(50)
+ Ttypemodule                                        VARCHAR2(100)
+
+SQL> desc module
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ IDM                                                NUMBER(38)
+ NAME                                               VARCHAR2(50)
+ LEVELE                                             VARCHAR2(20)
+ SEMESTER                                           NUMBER(38)
+ Tmodule                                            VARCHAR2(50)
+SQL> desc typemodule
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL NUMBER(38)
+ IDMODEL                                   NOT NULL NUMBER(38)
+ NAMET                                              VARCHAR2(25)
+
+SQL> desc attend
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CODE_S                                    NOT NULL NUMBER(288)
+ CODE_C                                    NOT NULL VARCHAR2(25)
+ IDT                                       NOT NULL NUMBER(38)
+ IDM                                       NOT NULL NUMBER(38)
+ IDTM                                      NOT NULL NUMBER(38)
+ DAY                                                VARCHAR2(25)
+ TIME_START                                         TIMESTAMP(6)
+ TIME_END                                           TIMESTAMP(6)
+ session_num                                        NUMBER(2)
+ group_num                                          NUMBER(20)
+
+student_seq
+teacher_seq
+module_seq
+typemodule_seq
