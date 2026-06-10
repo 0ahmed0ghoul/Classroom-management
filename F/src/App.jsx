@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Admin from "./Admin";
-import StudentAbs from "./absences/studentAbs";
+import StudentAbs from "./absences/StudentAbs";
 import AllStudents from "./Modals/Allstudents";
 function App() {
   return (
