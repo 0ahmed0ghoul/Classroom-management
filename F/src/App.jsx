@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Admin from "./admin";
+import Admin from "./Admin";
 import StudentAbs from "./absences/studentAbs";
-import AllStudents from "./Modals/AllStudents";
+import AllStudents from "./Modals/Allstudents";
 function App() {
   return (
     <Routes>

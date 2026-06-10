@@ -3,12 +3,12 @@ import axios from 'axios';
 import "./styles/table.css";
 import "./styles/admin.css";
 
-import Teachers from "./teachers";
+import Teachers from "./Teachers";
 import Students from "./Students";
-import Modules from "./modules";
-import Attend from "./attend";
-import Groups from "./groups";
-import Classrooms from "./classrooms";
+import Modules from "./Modules";
+import Attend from "./Attend";
+import Groups from "./Groups";
+import Classrooms from "./Classrooms";
 
 const Admin = () => {
   const [activeTab, setActiveTab] = useState("Attend");

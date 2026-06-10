@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 import "./styles/table.css";
 import "./styles/smodal.css";
-import AddStudent from "./Modals/addStudent";
-import EditStudent from "./Modals/editStudent";
-import StudentAbsences from "./Modals/studentAbsences";
+import AddStudent from "./Modals/AddStudent";
+import EditStudent from "./Modals/EditStudent";
+import StudentAbsences from "./Modals/StudentAbsences";
 
 const Students = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

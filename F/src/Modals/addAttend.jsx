@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import AllStudents from "./AllStudents";
+import AllStudents from "./Allstudents";
 import { useNavigate } from "react-router-dom";
 
 const AddAttend = ({ fetchAttendData,setIsModalOpen, time ,classroom,session_num}) => {
