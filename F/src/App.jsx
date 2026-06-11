@@ -10,9 +10,7 @@ function App() {
       <Route path="/attend/allstudents" element={<AllStudents />} />
       <Route path="/admin/student/:id/absences" element={<StudentAbs />} />
       <Route path="/admin/module/:id/types" element={<StudentAbs />} />
-      <Route path="/admin/teacher/:id/absences" element={<StudentAbs />} />
-
-       
+      <Route path="/admin/teacher/:id/absences" element={<StudentAbs />} />       
     </Routes>
   );
 }
