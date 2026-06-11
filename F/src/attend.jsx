@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles/table.css";
-import AddAttend from "./Modals/AddAttend"; // Ensure the path is correct
+import AddAttend from "./modals/AddAttend"; // Ensure the path is correct
 
 const Attend = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);

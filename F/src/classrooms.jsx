@@ -3,8 +3,8 @@ import "./styles/table.css";
 import "./styles/smodal.css";
 
 import { useNavigate } from "react-router-dom";
-import EditClassrooms from "./Modals/EditClassroom";
-import AddClassrooms from "./Modals/AddClassroom";
+import EditClassrooms from "./modals/EditClassroom";
+import AddClassrooms from "./modals/AddClassroom";
 
 const Classrooms = () => {
   const [classrooms, setClassrooms] = useState([]);

@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import AdminPage from "./AdminPage";
 import StudentAbs from "./absences/StudentAbs";
-import AllStudents from "./Modals/Allstudents";
+import AllStudents from "./modals/Allstudents";
 function App() {
   return (
     <Routes>

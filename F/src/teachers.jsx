@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./styles/table.css";
 import "./styles/tmodel.css";
-import AddTeachers from "./Modals/AddTeacher";
-import EditTeachers from "./Modals/EditTeacher";
+import AddTeachers from "./modals/AddTeacher";
+import EditTeachers from "./modals/EditTeacher";
 import { useNavigate } from "react-router-dom";
-import TeacherAbsences from "./Modals/TeacherAbsences";
+import TeacherAbsences from "./modals/TeacherAbsences";
 
 const Teachers = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);

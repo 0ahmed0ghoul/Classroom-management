@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./styles/table.css";
 import "./styles/smodal.css";
-import EditModules from "./Modals/EditModule";
-import AddModules from "./Modals/AddModule";
+import EditModules from "./modals/EditModule";
+import AddModules from "./modals/AddModule";
 import { useNavigate } from "react-router-dom";
 
 const Modules = () => {
