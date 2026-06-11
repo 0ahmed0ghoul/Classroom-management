@@ -10,7 +10,7 @@ const Attend = () => {
   const [attend, setAttend] = useState([]);
   const [filledSession, setFilledSession] = useState([]);
   const [time, setTime] = useState("");
-
+  const [serverError, setServerError] = useState(false);
   const weekdays = [
     "Sunday",
     "Monday",
@@ -30,14 +30,19 @@ const Attend = () => {
       const response = await fetch(
         "http://localhost:8081/admin/get-classrooms"
       );
-      const data = await response.json();
-      if (data && data.result) {
-        setClassrooms(data.result);
-      } else {
-        console.error("Invalid classrooms data structure:", data);
+  
+      if (!response.ok) {
+        throw new Error(`Server returned ${response.status}`);
       }
+  
+      const data = await response.json();
+  
+      setClassrooms(data?.result || []);
     } catch (error) {
-      console.error("Error fetching classrooms data:", error);
+      console.error(error);
+      setServerError(true);
+      setAttend([]);
+      setFilledSession([]);
     }
   };
   useEffect(() => {
@@ -51,19 +56,32 @@ const Attend = () => {
 
   const fetchAttendData = async () => {
     try {
-      const response = await fetch("http://localhost:8081/admin/get-attend");
+      const response = await fetch(
+        "http://localhost:8081/admin/get-attend"
+      );
+  
+      if (!response.ok) {
+        throw new Error(`Server returned ${response.status}`);
+      }
+  
       const data = await response.json();
-
-      setAttend(data.attends);
-      const fs = data.attends
-      .map((attend) => ({
-        classroom: attend[1],
-        day: attend[5],
-        sessionKey: attend[8] || "No Session Key", // Handle null case
+  
+      const attends = data?.attends || [];
+  
+      setAttend(attends);
+  
+      const fs = attends.map((attend) => ({
+        classroom: attend?.[1] ?? "",
+        day: attend?.[5] ?? "",
+        sessionKey: attend?.[8] ?? "No Session Key",
       }));
+  
       setFilledSession(fs);
-    } catch (error) {
-      console.error("Error fetching attendance data:", error);
+    }catch (error) {
+      console.error(error);
+      setServerError(true);
+      setAttend([]);
+      setFilledSession([]);
     }
   };
   useEffect(() => {
@@ -71,7 +89,21 @@ const Attend = () => {
   }, []);
 
   return (
+    
     <div className="table-container">
+      {serverError && (
+  <div
+    style={{
+      padding: "10px",
+      marginBottom: "20px",
+      background: "#ffdddd",
+      color: "red",
+      border: "1px solid red",
+    }}
+  >
+    Cannot connect to the server. Please try again later. Maybe the server is down or there is a network issue.
+  </div>
+)}
       <div
         style={{
           marginBottom: "32px",
